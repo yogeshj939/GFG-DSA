@@ -25,8 +25,6 @@ public class MergeOverlappingIntervals {
 
     public static void mergeIntervals(Interval[] arr){
         Arrays.sort(arr,new MyComparator());
-        int[][] arr2 = new int[2][2];
-        Arrays.sort(arr2);
         System.out.println("Sorted Intervals : "+Arrays.toString(arr));
         int res = 0;
         for(int i = 1; i < arr.length; i++){
@@ -45,7 +43,6 @@ public class MergeOverlappingIntervals {
     }
 
     public static class MyComparator implements Comparator<Interval>{
-
         @Override
         public int compare(Interval o1, Interval o2) {
             return Integer.compare(o1.start, o2.start);
